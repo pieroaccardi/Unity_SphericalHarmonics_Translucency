@@ -83,8 +83,7 @@ public class ThicknessCompute : EditorWindow
                 tmp_camera.RenderToCubemap(thickness_cubemap);
 
                 //project the cubemap to the spherical harmonic basis
-                SphericalHarmonics.CPU_Project_Uniform_9Coeff(thickness_cubemap, coefficients);
-                //SphericalHarmonics.GPU_Project_MonteCarlo_9Coeff(thickness_cubemap, coefficients);
+                SphericalHarmonics.GPU_Project_Uniform_9Coeff(thickness_cubemap, coefficients);
 
                 //put 4 coefficients in the vertex color, 2 in the uv2 and 2 in the uv3 and 1 in uv4
                 colors[v] = new Color(coefficients[0].x, coefficients[1].x, coefficients[2].x, coefficients[3].x);
