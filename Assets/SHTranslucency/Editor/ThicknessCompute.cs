@@ -55,7 +55,7 @@ public class ThicknessCompute : EditorWindow
             GameObject tmp_camera_object = new GameObject("tmp_camera");
             Camera tmp_camera = tmp_camera_object.AddComponent<Camera>();
             tmp_camera.clearFlags = CameraClearFlags.Color;
-            tmp_camera.backgroundColor = Color.white; //TODO: in teoria il background dovrebbe avere valore infinito
+            tmp_camera.backgroundColor = Color.black;
             tmp_camera.nearClipPlane = 0.01f;
             tmp_camera.farClipPlane = 300;
 

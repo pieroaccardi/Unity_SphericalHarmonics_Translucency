@@ -11,6 +11,9 @@
 		Pass
 		{
 			Cull Off
+			ZTest Always
+			BlendOp Max
+			Blend One One
 
 			CGPROGRAM
 			#pragma vertex vert
@@ -39,7 +42,8 @@
 			
 			fixed4 frag (v2f i) : SV_Target
 			{
-				return length(i.world_position.xyz - _WorldSpaceCameraPos.xyz);
+				float l = length(i.world_position.xyz - _WorldSpaceCameraPos.xyz);
+				return float4(l, l, l, 1);
 			}
 			ENDCG
 		}
